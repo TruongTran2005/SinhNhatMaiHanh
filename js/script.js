@@ -676,13 +676,24 @@ function triggerStarStorm() {
 function openScroll() {
   const scroll = document.getElementById('scrollWrapper');
   const btn = document.getElementById('btnAfterLetter');
-  if (scroll) scroll.classList.toggle('open');
-  setTimeout(() => {
-    if (btn) {
-      btn.style.opacity = '1';
-      btn.style.pointerEvents = 'auto';
+  if (!scroll) return;
+
+  scroll.classList.toggle('open');
+
+  // Chỉ hiện nút tiếp tục khi thư đã mở hoàn toàn
+  if (btn) {
+    if (scroll.classList.contains('open')) {
+      setTimeout(() => {
+        if (scroll.classList.contains('open')) {
+          btn.style.opacity = '1';
+          btn.style.pointerEvents = 'auto';
+        }
+      }, 1000);
+    } else {
+      btn.style.opacity = '0';
+      btn.style.pointerEvents = 'none';
     }
-  }, 1000);
+  }
 }
 
 

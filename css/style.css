@@ -1947,3 +1947,126 @@
     font-size: 23px;
   }
 }
+
+
+/* ===== FIX RESPONSIVE MOBILE: STEP 6 + STEP 9 ===== */
+@media (max-width: 600px) {
+  /* Cho phép cuộn nội dung dài trong các màn thư và thiệp */
+  #step-6,
+  #step-9 {
+    height: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    padding-top: max(22px, env(safe-area-inset-top));
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
+  }
+
+  /* Khi mới vào step 6, cuộn thư phải ở trạng thái đóng */
+  #step-6 .scroll-wrapper {
+    width: min(90vw, 540px);
+    height: 75px;
+    min-height: 75px;
+    max-height: 68vh;
+    padding: 22px 16px;
+    margin: 18px auto;
+    overflow: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #step-6 .scroll-wrapper.open {
+    height: 68vh;
+    min-height: 0;
+    max-height: 68vh;
+    padding: 24px 18px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #step-6 .letter-photo {
+    width: min(230px, 88%);
+    height: auto;
+    max-height: 42vh;
+    object-fit: contain;
+  }
+
+  #step-6 .letter-text {
+    font-size: clamp(1.1rem, 5vw, 1.3rem);
+    line-height: 1.65;
+  }
+
+  #step-6 #btnAfterLetter {
+    flex: 0 0 auto;
+    margin-bottom: 18px;
+  }
+
+  /* Step 9: không ép ảnh theo chiều cao cố định, giữ đúng tỷ lệ gốc */
+  #step-9 .wish-page {
+    top: 0;
+    width: 100%;
+    max-width: 430px;
+    flex: 0 0 auto;
+    gap: 0;
+  }
+
+  #step-9 .wish-card {
+    width: 100%;
+    padding: 14px;
+  }
+
+  #step-9 .wish-photo {
+    width: 100%;
+    height: auto !important;
+    max-height: 58vh;
+    aspect-ratio: auto;
+    object-fit: contain !important;
+    object-position: center;
+  }
+
+  #step-9 .wish-name {
+    font-size: clamp(30px, 8vw, 36px);
+  }
+
+  #step-9 .wish-birthday {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  #step-9 .wish-input {
+    font-size: 16px;
+    border-radius: 20px;
+  }
+
+  #step-9 .wish-caption {
+    line-height: 1.5;
+    padding: 0 6px;
+  }
+}
+
+/* Điện thoại rất hẹp hoặc màn hình thấp */
+@media (max-width: 380px) {
+  #step-6 .scroll-wrapper.open {
+    height: 65vh;
+    max-height: 65vh;
+    padding: 20px 14px;
+  }
+
+  #step-9 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #step-9 .wish-card {
+    padding: 12px;
+  }
+
+  #step-9 .wish-heading {
+    letter-spacing: 2px;
+  }
+}
