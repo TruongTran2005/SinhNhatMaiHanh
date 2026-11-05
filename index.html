@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Chúc Mừng Sinh Nhật Cậu! 🎉</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="flash-overlay"></div>
+  <!-- TRANG TRÍ CHUNG: cờ + bóng bay (hiện tất cả step trừ step-1) -->
+<div id="global-decor" class="global-decor" hidden>
+  <div class="bunting global-bunting">
+    <div class="flag f1"></div>
+    <div class="flag f2"></div>
+    <div class="flag f3"></div>
+    <div class="flag f4"></div>
+    <div class="flag f5"></div>
+    <div class="flag f6"></div>
+    <div class="flag f7"></div>
+    <div class="flag f8"></div>
+  </div>
+
+  <div class="balloon balloon-1"></div>
+  <div class="balloon balloon-2"></div>
+  <div class="balloon balloon-3"></div>
+  <div class="balloon balloon-4"></div>
+  <div class="balloon balloon-5"></div>
+  <div class="balloon balloon-6"></div>
+
+  <div class="deco-heart h1">♥</div>
+  <div class="deco-heart h2">♥</div>
+  <div class="deco-star s1">✦</div>
+  <div class="deco-star s2">✧</div>
+</div>
+
+  <!-- BƯỚC 1 -->
+  <!-- BƯỚC 1 -->
+<div id="step-1" class="screen active">
+  <p class="switch-text text-top" id="textTop">ở đây tối quá...</p>
+
+  <div class="switch-box" id="lightSwitch">
+    <div class="switch-top">
+      <span class="sw-star">✦</span>
+      <span class="sw-star">✧</span>
+      <span class="sw-star">✦</span>
+    </div>
+    <div class="switch-bottom">
+      <div class="switch-knob"></div>
+    </div>
+  </div>
+
+  <p class="switch-text text-bottom" id="textBottom">Cô Năm thử gạt công tắc đèn đi</p>
+</div>
+
+  <!-- BƯỚC 2 -->
+  <div id="step-2" class="screen">
+    
+    <p class="tag-text canva-item">BẤT NGỜ CHƯA!!</p>
+    <h1 class="main-title canva-item">CHÚC MỪNG SINH NHẬT</h1>
+    <h2 class="name-title canva-item">Cô Năm</h2>
+    <p class="sub-title canva-item">tuổi mới ✨</p>
+    <button class="btn-gold canva-item" onclick="goToStep(3)">tiếp nào 💖</button>
+  </div>
+
+  <!-- BƯỚC 3: BÁNH KEM & THỔI NẾN SỐ -->
+  <div id="step-3" class="screen">
+    <p id="cakeHint" class="switch-text">suỵt... chờ tí 🤫</p>
+    
+    <div class="cake-container">
+      <div class="candle-numbers-container">
+        
+        <!-- VÙNG BẤM GIỮ Ở GIỮA ĐỂ THỔI TẮT CẢ 2 NGỌN CÙNG LÚC -->
+        <div class="candle-flame-zone-center" id="flameZoneCenter" title="Thổi cả 2 ngọn"></div>
+
+        <!-- Số 3 -->
+        <div class="number-digit-wrapper">
+          <div class="candle-flame-zone" id="flameZone1">
+            <div class="flame-glow" id="glow1"></div>
+            <div class="candle-wick" id="wick1"></div>
+            <svg class="candle-flame" id="flame1" viewBox="0 0 30 50">
+  <path class="flame-path" d="M15,5 C20,18 25,28 25,38 C25,45 20,50 15,50 C10,50 5,45 5,38 C5,28 10,18 15,5 Z" />
+  <path class="flame-core" d="M15,19 C18,27 20,32 20,38 C20,42 18,45 15,45 C12,45 10,42 10,38 C10,32 12,27 15,19 Z" />
+</svg>
+          </div>
+          <span class="digit-number">3</span>
+        </div>
+
+        <!-- Số 6 -->
+        <div class="number-digit-wrapper">
+          <div class="candle-flame-zone" id="flameZone2">
+            <div class="flame-glow" id="glow2"></div>
+            <div class="candle-wick" id="wick2"></div>
+            <svg class="candle-flame" id="flame2" viewBox="0 0 30 50">
+  <path class="flame-path" d="M15,5 C20,18 25,28 25,38 C25,45 20,50 15,50 C10,50 5,45 5,38 C5,28 10,18 15,5 Z" />
+  <path class="flame-core" d="M15,19 C18,27 20,32 20,38 C20,42 18,45 15,45 C12,45 10,42 10,38 C10,32 12,27 15,19 Z" />
+</svg>
+          </div>
+          <span class="digit-number digit-six">6</span>
+        </div>
+      </div>
+
+      <!-- Ảnh bánh kem -->
+      <img src="assets/cake.png" alt="Bánh kem" class="cake-img" id="cakeImg">
+
+      <!-- Que diêm quẹt lửa ban đầu -->
+      <div class="matchstick" id="matchstick">
+        <div class="match-head"></div>
+        <div class="match-fire"></div>
+      </div>
+    </div>
+
+    <p id="blowInstruction" class="switch-text" style="opacity: 0; transition: opacity 0.5s;">
+      nhấn giữ trực tiếp vào ngọn lửa để thổi nến 🌬️
+    </p>
+  </div>
+
+  <!-- BƯỚC 4 & 5 -->
+  <div id="step-4" class="screen">
+    <p class="switch-text" id="starHintText">giờ thì... ước một điều. nhắm mắt lại. cứ từ từ ✨</p>
+    <div class="star-holder" id="starHolder">
+      <svg class="progress-ring">
+        <circle class="progress-ring-circle" r="54" cx="60" cy="60"/>
+      </svg>
+      <svg class="star-svg" viewBox="0 0 24 24">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+    </div>
+    <p style="font-size: 0.85rem; color: #64748b;" id="starSubText">giữ tay trên màn hình trong lúc ước</p>
+  </div>
+
+  <!-- BƯỚC 6 & 7 -->
+  <div id="step-6" class="screen">
+    <p class="sub-title" style="margin-bottom: 20px;">còn một điều nữa, cái này từ con ❤️</p>
+    <div class="scroll-wrapper" id="scrollWrapper" onclick="openScroll()">
+      <p style="font-weight: 600; color: #b45309; margin-bottom: 10px;">chạm vào cuộn giấy để mở thư 📜</p>
+      <div class="photo-tape"></div>
+      <img src="assets/letter-photo.jpg" class="letter-photo" alt="Kỷ niệm">
+      <p class="letter-text">
+        Con chúc cô Năm một ngày sinh nhật thật trọn vẹn, nhận được nhiều hoa và quà. Cảm ơn cô Năm vì đã luôn yêu thương và nuông chiều con. Mà nè! Năm phải thật mạnh mẽ lên, đừng có khóc ròi tuổi thân một mình nữa ✨<br><br>
+        – Trường Trần gửi Năm ❤️
+      </p>
+    </div>
+    <button class="btn-gold" id="btnAfterLetter" style="opacity: 0; pointer-events: none; margin-top: 25px;" onclick="goToStep(7)">tiếp nào ✨</button>
+  </div>
+
+  <!-- BƯỚC 8 -->
+  
+<div id="step-7" class="screen">
+  <div class="memory-page">
+    <div class="photo-number" id="photoNumber35"
+         aria-label="Số 36 ghép từ ảnh kỷ niệm">
+    </div>
+
+    <p class="memory-caption">
+      chạm vào ảnh mini để xem những khoảnh khắc này<br>
+    </p>
+
+    <button class="memory-next" onclick="goToStep(9)">
+      điều cuối cùng ✨
+    </button>
+  </div>
+</div>
+
+<!-- Cửa sổ phóng to ảnh -->
+<div class="photo-lightbox" id="photoLightbox"
+     role="dialog" aria-modal="true"
+     aria-label="Xem ảnh kỷ niệm">
+  <button class="lightbox-close" id="closeLightbox"
+          aria-label="Đóng ảnh">&times;</button>
+  <button class="lightbox-prev" id="prevPhoto"
+          aria-label="Ảnh trước">&#10094;</button>
+  <img id="lightboxImage" src="" alt="Ảnh kỷ niệm phóng to">
+  <button class="lightbox-next" id="nextPhoto"
+          aria-label="Ảnh tiếp theo">&#10095;</button>
+  <p id="lightboxCounter"></p>
+</div>
+
+
+  <!-- BƯỚC 9 -->
+  
+<div id="step-9" class="screen">
+  <div class="wish-page">
+
+    <div class="wish-card">
+      <p class="wish-heading">✦ TIỆC SINH NHẬT ✦</p>
+
+      <img
+        src="assets/birthday.jpg"
+        alt="Kỷ niệm sinh nhật"
+        class="wish-photo"
+      >
+
+      <h2 class="wish-name">Mai Hạnh</h2>
+      <p class="wish-birthday">chính thức 36 tuổi · 15 tháng 11, 1990</p>
+
+      <div class="wish-divider"></div>
+
+<div id="liveWishCard" class="live-wish-card" hidden>
+  <p>điều ước của mình năm nay ✨</p>
+  <div id="liveWishText"></div>
+</div>
+
+<div class="wish-divider"></div>
+
+<p class="wish-thanks">được chúc mừng bởi Tớ 🤍</p>
+    </div>
+
+
+    <p class="wish-caption">
+      tới lượt Năm - viết điều ước cho năm tới nhé 🥳
+    </p>
+
+    <textarea
+      id="wishInput"
+      class="wish-input"
+      maxlength="180"
+      placeholder="vd. năm nay mình mong sẽ dũng cảm hơn với ước mơ của chính mình..."
+    ></textarea>
+
+    <p class="wish-counter"><span id="wishCount">0</span>/180</p>
+
+    <button class="btn-gold wish-save" onclick="saveBirthdayWish()">
+      giữ lại tấm này ✨
+    </button>
+
+
+    <button class="wish-back" onclick="restartParty()">
+  xem lại bữa tiệc 🎈
+</button>
+
+  </div>
+</div>
+
+<div id="step-10" class="screen">
+  <div class="final-page">
+
+    <!-- Cờ sinh nhật -->
+    <div class="final-bunting" aria-hidden="true">
+      <span>▼</span><span>▼</span><span>▼</span>
+      <span>▼</span><span>▼</span><span>▼</span>
+      <span>▼</span>
+    </div>
+
+    <!-- Bóng bay và đồ trang trí -->
+    <div class="final-decor decor-left" aria-hidden="true">
+      <span class="balloon pink">♡</span>
+      <span class="balloon blue">♡</span>
+      <span class="balloon yellow">♡</span>
+      <span class="float-heart">♥</span>
+      <span class="float-star">✦</span>
+      <span class="float-petal">❀</span>
+    </div>
+
+    <div class="final-decor decor-right" aria-hidden="true">
+      <span class="balloon yellow">♡</span>
+      <span class="balloon green">♡</span>
+      <span class="balloon pink">♡</span>
+      <span class="float-heart">♥</span>
+      <span class="float-star">✦</span>
+      <span class="float-petal">❀</span>
+    </div>
+
+    <main class="final-content">
+      <p class="final-eyebrow">CON GỬI CÔ NĂM 💜</p>
+
+      <p class="final-message">
+        mong điều ước cô Năm vừa viết sẽ thành sự thật trong năm nay nhé
+      </p>
+
+      <div class="final-divider"><span>♡</span></div>
+
+      <!-- Tấm Polaroid -->
+      
+
+      <button class="final-download" onclick="downloadBirthdayPolaroid()">
+        ↓ Tải ảnh Polaroid
+      </button>
+
+      <p class="final-thanks">
+        Cảm ơn cô Năm vì luôn ở đây,<br>
+        làm cho thế giới này trở nên đặc biệt hơn ♡
+      </p>
+
+      <button class="wish-back" onclick="restartParty()">
+  <span>↺</span> xem lại bữa tiệc
+</button>
+
+      <p class="final-signature">with love, from Tớ ✦</p>
+    </main>
+  </div>
+</div>
+
+
+<!-- Nút bật/tắt nhạc -->
+<button id="musicToggle" class="music-toggle"
+        type="button" aria-label="Tắt nhạc">
+  <span id="musicIcon">♫</span>
+</button>
+
+  <audio id="bgMusic" preload="auto"></audio>
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
